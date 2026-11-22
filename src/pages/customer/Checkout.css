@@ -1,0 +1,277 @@
+
+/* ==============================
+   PAYMENT METHOD SECTION
+============================== */
+
+.payment-section {
+  width: 100%;
+  margin-top: 22px;
+}
+
+.payment-section h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #172b22;
+  margin-bottom: 5px;
+}
+
+.payment-subtitle {
+  font-size: 11px;
+  color: #849087;
+  margin-bottom: 12px;
+}
+
+/* PAYMENT OPTIONS */
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.payment-option {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 65px;
+  padding: 10px 13px;
+
+  border: 1px solid #dce7df;
+  border-radius: 9px;
+
+  background: #ffffff;
+  cursor: pointer;
+
+  text-align: left !important;
+  box-sizing: border-box;
+
+  transition: all 0.2s ease;
+}
+
+/* RADIO BUTTON */
+
+.payment-option input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  margin: 0 !important;
+
+  flex-shrink: 0;
+  accent-color: #16a05d;
+  cursor: pointer;
+}
+
+/* PAYMENT ICON */
+
+.payment-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+  background: #f0f6f2;
+
+  font-size: 20px;
+  color: #159b59;
+}
+
+/* PAYMENT DETAILS */
+
+.payment-info {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center;
+
+  flex: 1;
+  min-width: 0;
+
+  gap: 4px;
+  text-align: left !important;
+}
+
+.payment-info strong {
+  font-size: 13px;
+  font-weight: 650;
+  color: #20372a;
+}
+
+.payment-info small {
+  font-size: 10px;
+  line-height: 1.4;
+  color: #849087;
+}
+
+/* HOVER EFFECT */
+
+.payment-option:hover {
+  border-color: #16a05d;
+  background: #f6fbf7;
+  transform: translateY(-1px);
+}
+
+/* SELECTED PAYMENT */
+
+.payment-option.selected {
+  border: 1.5px solid #16a05d;
+  background: #effaf3;
+  box-shadow: 0 2px 7px rgba(22, 160, 93, 0.08);
+}
+
+.payment-option.selected .payment-icon {
+  background: #dff4e6;
+}
+
+/* QR PAYMENT */
+
+.qr-payment {
+  margin-top: 12px;
+  padding: 16px;
+
+  border: 1px solid #dce7df;
+  border-radius: 10px;
+
+  background: #f8fcf9;
+  text-align: center;
+}
+
+.qr-image {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.qr-image svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.upi-id {
+  font-size: 12px;
+  color: #405448;
+  margin: 10px 0;
+}
+
+.upi-pay-btn {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 7px;
+
+  background: #16a05d;
+  color: white;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* NOTICES */
+
+.qr-warning,
+.cod-notice,
+.demo-label {
+  display: block;
+  margin-top: 10px;
+  padding: 9px;
+
+  border-radius: 7px;
+  background: #eff8f1;
+
+  color: #43815b;
+  font-size: 11px;
+}
+
+/* CARD PAYMENT */
+
+.card-payment {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  margin-top: 12px;
+  padding: 14px;
+
+  border: 1px solid #dce7df;
+  border-radius: 10px;
+  background: #f9fcfa;
+}
+
+.card-payment input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+
+  border: 1px solid #dce7df;
+  border-radius: 7px;
+
+  outline: none;
+  box-sizing: border-box;
+}
+
+.card-payment input:focus {
+  border-color: #16a05d;
+}
+
+/* NET BANKING */
+
+.bank-payment {
+  margin-top: 12px;
+}
+
+.bank-payment select {
+  width: 100%;
+  padding: 11px;
+
+  border: 1px solid #dce7df;
+  border-radius: 8px;
+
+  background: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.bank-payment select:focus {
+  border-color: #16a05d;
+}
+
+/* PAYMENT SUMMARY */
+
+.summary-payment {
+  font-size: 12px;
+  color: #64756a;
+  margin-top: 12px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 480px) {
+  .payment-option {
+    min-height: 60px;
+    padding: 9px 11px;
+    gap: 10px;
+  }
+
+  .payment-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .payment-info strong {
+    font-size: 12px;
+  }
+
+  .payment-info small {
+    font-size: 10px;
+  }
+
+  .card-payment {
+    grid-template-columns: 1fr;
+  }
+}

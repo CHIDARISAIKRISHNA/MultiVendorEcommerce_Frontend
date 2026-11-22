@@ -1,0 +1,484 @@
+
+/* ===============================
+   SHOPSTACK CHATBOT
+================================ */
+
+.support-widget {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 99999;
+  font-family: inherit;
+}
+
+/* Floating button */
+
+.support-toggle {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  border: none;
+  border-radius: 50%;
+  background: #176b48;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(23, 107, 72, 0.35);
+  transition: 0.3s ease;
+}
+
+.support-toggle:hover {
+  background: #105638;
+  transform: translateY(-4px) scale(1.04);
+}
+
+.support-toggle.chat-open {
+  background: #183b2c;
+}
+
+.chat-notification-dot {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 12px;
+  height: 12px;
+  background: #f5b942;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+/* Chat window */
+
+.support-window {
+  position: absolute;
+  bottom: 78px;
+  right: 0;
+  width: 370px;
+  height: 570px;
+  max-height: calc(100vh - 120px);
+  background: var(--card, #ffffff);
+  border: 1px solid var(--border, #e4eae5);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 55px rgba(0, 0, 0, 0.18);
+  animation: chatAppear 0.3s ease;
+}
+
+@keyframes chatAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Header */
+
+.support-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 17px;
+  background: #176b48;
+  color: white;
+  flex-shrink: 0;
+}
+
+.support-avatar {
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.17);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 13px;
+}
+
+.support-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.support-heading h3 {
+  margin: 0 0 5px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.support-heading span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #d5f2e2;
+}
+
+.online-dot {
+  width: 7px;
+  height: 7px;
+  background: #6df5a6;
+  border-radius: 50%;
+}
+
+.support-reset,
+.support-close {
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+.support-reset:hover,
+.support-close:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Chat body */
+
+.support-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 15px;
+  background: var(--background, #f7faf7);
+}
+
+.support-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.support-body::-webkit-scrollbar-thumb {
+  background: #b5cbbd;
+  border-radius: 10px;
+}
+
+/* Welcome message */
+
+.support-welcome {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  background: var(--card, #ffffff);
+  border: 1px solid var(--border, #e5ebe6);
+  border-radius: 12px;
+  margin-bottom: 17px;
+}
+
+.welcome-icon {
+  width: 34px;
+  height: 34px;
+  background: #e4f5e9;
+  color: #176b48;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.support-welcome strong {
+  display: block;
+  font-size: 12px;
+  color: var(--text, #183b2c);
+}
+
+.support-welcome p {
+  margin: 3px 0 0;
+  font-size: 11px;
+  color: var(--muted, #718078);
+}
+
+/* Messages */
+
+.support-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.support-message-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.support-message-row.user {
+  justify-content: flex-end;
+}
+
+.message-avatar {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dff2e5;
+  color: #176b48;
+  border-radius: 50%;
+}
+
+.message-content {
+  max-width: 85%;
+  min-width: 0;
+}
+
+.support-message {
+  padding: 11px 13px;
+  border-radius: 13px;
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.support-message.bot {
+  background: var(--card, #ffffff);
+  color: var(--text, #26382e);
+  border: 1px solid var(--border, #e5ebe6);
+  border-top-left-radius: 3px;
+}
+
+.support-message.user {
+  background: #176b48;
+  color: white;
+  border-top-right-radius: 3px;
+}
+
+/* FAQ buttons */
+
+.support-faq {
+  margin-top: 20px;
+}
+
+.support-faq p {
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: var(--muted, #829087);
+  margin-bottom: 10px;
+}
+
+.support-faq button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  text-align: left;
+  padding: 11px 12px;
+  margin-bottom: 8px;
+  border: 1px solid var(--border, #dce8df);
+  background: var(--card, #ffffff);
+  color: var(--text, #24523a);
+  border-radius: 10px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.support-faq button:hover {
+  border-color: #176b48;
+  background: #eaf5ed;
+  color: #176b48;
+}
+
+/* Suggested questions */
+
+.chat-suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 9px;
+}
+
+.chat-suggestions button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  border: 1px solid #cfe4d5;
+  background: var(--card, white);
+  color: #176b48;
+  border-radius: 9px;
+  font-size: 11px;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Product recommendations */
+
+.chat-products {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.chat-product-card {
+  display: flex;
+  gap: 10px;
+  padding: 9px;
+  background: var(--card, white);
+  border: 1px solid var(--border, #e1e9e2);
+  border-radius: 12px;
+}
+
+.chat-product-card img {
+  width: 70px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.chat-product-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.chat-product-info > a {
+  color: var(--text, #183b2c);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.chat-product-info strong {
+  color: #176b48;
+  font-size: 12px;
+}
+
+.chat-product-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.chat-product-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 8px;
+  border: 1px solid #d6e6d9;
+  background: var(--card, white);
+  color: #176b48;
+  border-radius: 7px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.chat-product-actions button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Input area */
+
+.support-input {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 14px;
+  background: var(--card, white);
+  border-top: 1px solid var(--border, #e5ebe6);
+  flex-shrink: 0;
+}
+
+.support-input input {
+  flex: 1;
+  min-width: 0;
+  height: 42px;
+  padding: 0 13px;
+  border: 1px solid var(--border, #dce5de);
+  background: var(--background, #f8faf8);
+  color: var(--text, #183b2c);
+  border-radius: 25px;
+  outline: none;
+  font-size: 12px;
+}
+
+.support-input input:focus {
+  border-color: #176b48;
+}
+
+.support-input button {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #176b48;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.support-input button:hover {
+  background: #105638;
+  transform: scale(1.05);
+}
+
+.support-input button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Footer */
+
+.support-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px;
+  background: var(--card, white);
+  color: var(--muted, #89968e);
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+  .support-widget {
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .support-window {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 85px;
+    width: auto;
+    height: min(570px, calc(100dvh - 115px));
+  }
+
+  .support-toggle {
+    width: 56px;
+    height: 56px;
+  }
+}

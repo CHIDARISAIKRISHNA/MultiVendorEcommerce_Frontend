@@ -1,0 +1,261 @@
+
+/* ==================================
+   ACCOUNT SETTINGS PAGE
+================================== */
+
+.account-settings-page {
+  width: calc(100% - 40px);
+  max-width: 900px;
+  margin: 45px auto 80px;
+  color: #17291f;
+  box-sizing: border-box;
+}
+
+.account-settings-page * {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.account-settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.account-settings-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #14291f;
+  margin: 0 0 9px;
+}
+
+.account-settings-header p {
+  color: #78877e;
+  font-size: 14px;
+  margin: 0;
+}
+
+.account-settings-icon {
+  width: 55px;
+  height: 55px;
+  background: #e7f5eb;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+}
+
+/* MAIN CARDS */
+
+.account-settings-card {
+  background: #fff;
+  border: 1px solid #e1e9e3;
+  border-radius: 17px;
+  padding: 27px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(20, 50, 30, 0.05);
+}
+
+/* CARD HEADING */
+
+.account-settings-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e9efea;
+}
+
+.account-settings-heading-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #eaf6ee;
+  border-radius: 12px;
+  font-size: 21px;
+}
+
+.account-settings-card-heading h2 {
+  font-size: 19px;
+  font-weight: 750;
+  margin: 0 0 5px;
+  color: #17291f;
+}
+
+.account-settings-card-heading p {
+  font-size: 13px;
+  color: #87938b;
+  margin: 0;
+}
+
+/* NOTIFICATION ROWS */
+
+.account-settings-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 21px 5px;
+  border-bottom: 1px solid #edf1ee;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.account-setting-row:last-child {
+  border-bottom: none;
+  padding-bottom: 5px;
+}
+
+.account-setting-row:hover {
+  background: #f8fbf8;
+}
+
+.account-setting-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.account-setting-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #f1f7f2;
+  border-radius: 11px;
+  font-size: 20px;
+}
+
+.account-setting-info strong {
+  font-size: 15px;
+  color: #17291f;
+}
+
+.account-setting-info p {
+  font-size: 12px;
+  color: #87938b;
+  margin: 5px 0 0;
+}
+
+/* CHECKBOX */
+
+.account-setting-row input[type="checkbox"] {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  accent-color: #09864d;
+  cursor: pointer;
+}
+
+/* SECURITY */
+
+.security-card {
+  margin-top: 20px;
+}
+
+.security-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 22px;
+}
+
+.security-content strong {
+  font-size: 15px;
+  color: #17291f;
+}
+
+.security-content p {
+  max-width: 540px;
+  color: #78877e;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 8px 0 0;
+}
+
+.account-settings-button {
+  flex-shrink: 0;
+  padding: 12px 20px;
+  background: #078348;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.account-settings-button:hover {
+  background: #066b3c;
+  transform: translateY(-2px);
+}
+
+/* FOOTER */
+
+.account-settings-footer {
+  text-align: center;
+  font-size: 12px;
+  color: #89968e;
+  margin-top: 25px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+  .account-settings-page {
+    width: calc(100% - 28px);
+    margin: 30px auto 55px;
+  }
+
+  .account-settings-header h1 {
+    font-size: 26px;
+  }
+
+  .account-settings-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .account-settings-card {
+    padding: 19px;
+  }
+
+  .account-settings-card-heading h2 {
+    font-size: 17px;
+  }
+
+  .account-setting-row {
+    gap: 10px;
+    padding: 18px 2px;
+  }
+
+  .account-setting-info {
+    gap: 10px;
+  }
+
+  .account-setting-info p {
+    line-height: 1.5;
+  }
+
+  .security-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .account-settings-button {
+    width: 100%;
+  }
+}

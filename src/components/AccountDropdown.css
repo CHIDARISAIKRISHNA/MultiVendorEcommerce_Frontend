@@ -1,0 +1,11 @@
+.ss-account-dropdown { position: relative; display: inline-flex; z-index: 50; }
+.ss-account-trigger { display:flex; align-items:center; gap:8px; border:0; background:transparent; color:#14251c; cursor:pointer; padding:10px 12px; font:inherit; white-space:nowrap; }
+.ss-chevron { color:#78877e; }
+.ss-account-menu { position:absolute; top:calc(100% + 10px); right:0; width:245px; padding:9px; background:#fff; border:1px solid #e4ebe5; border-radius:15px; box-shadow:0 12px 35px #10251b20; z-index:52; }
+.ss-account-user { padding:12px; display:flex; flex-direction:column; gap:5px; border-bottom:1px solid #e8eee9; margin-bottom:5px; }
+.ss-account-user strong { color:#14251c; font-size:14px; }
+.ss-account-user small { color:#87938b; font-size:12px; }
+.ss-account-link { width:100%; box-sizing:border-box; display:flex; align-items:center; gap:11px; padding:11px 12px; border:0; border-radius:8px; text-decoration:none; background:transparent; color:#26372e; font-size:13px; text-align:left; cursor:pointer; }
+.ss-account-link:hover { background:#eaf5ed; color:#078348; }
+.ss-logout { border-top:1px solid #e8eee9; border-radius:0; margin-top:5px; }
+.ss-dropdown-backdrop { position:fixed; inset:0; z-index:51; border:0; background:transparent; cursor:default; }
